@@ -1,5 +1,7 @@
 package cw;
 
+import java.util.Locale;
+
 public class NthSeries {
 	
 	public static String seriesSum(int n) {
@@ -11,7 +13,7 @@ public class NthSeries {
       sum += 1.0/divider;
       divider += increment;
     }
-    return Double.toString(Math.round(sum * 100)/100.0);
-    
+    Locale.setDefault(Locale.US);
+    return String.format("%.2f", Math.round(sum * 100)/100.0);
 	}
 }
